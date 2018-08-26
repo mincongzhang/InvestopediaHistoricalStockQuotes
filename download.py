@@ -9,12 +9,10 @@ def download_data(symbol, start_date):
     file_path = "../investopedia_data/"+symbol+".csv"
     
     print("Downloading "+symbol)
-    #if is_non_zero_file(file_path):
-    #    print(file_path+" exists!")
-    #    return
+    if is_non_zero_file(file_path):
+        print(file_path+" exists!")
+        return
     
-    #example
-    #https://www.investopedia.com/markets/api/partial/historical/?Symbol=BILI&Type=%20Historical+Prices&Timeframe=Hourly&StartDate=Nov+28%2C+2010&EndDate=Dec+05%2C+2018
     url_prefix = "https://www.investopedia.com/markets/api/partial/historical/?"
     url_symbol = "Symbol="+symbol
     url_type = "&Type=%20Historical+Prices"
