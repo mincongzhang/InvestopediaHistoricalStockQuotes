@@ -10,7 +10,7 @@ def is_non_zero_file(fpath):
 #symbol     - string
 #start_date - datetime
 #end_date   - datetime
-def download_data(symbol, start_date, end_date):
+def download_data(symbol, start_date=datetime.datetime(2018,1,1), end_date=datetime.date.today()):
     file_path = "../investopedia_data/"+symbol+".csv"
     
     print("Downloading "+symbol)
@@ -37,3 +37,4 @@ def download_data(symbol, start_date, end_date):
     dataframe = dataframe_list[0]
     dataframe.to_csv(file_path)
     
+download_data("AAPL",datetime.datetime(2018,8,1),datetime.date.today())
