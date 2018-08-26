@@ -1,10 +1,15 @@
 import pandas as pd
 import os
+import datetime
 from six.moves import urllib
 
 def is_non_zero_file(fpath):  
     return os.path.isfile(fpath) and os.path.getsize(fpath) > 0
 
+#input args:
+#symbol     - string
+#start_date - datetime
+#end_date   - datetime
 def download_data(symbol, start_date, end_date):
     file_path = "../investopedia_data/"+symbol+".csv"
     
@@ -13,8 +18,6 @@ def download_data(symbol, start_date, end_date):
     #    print(file_path+" exists!")
     #    return
     
-    #example
-    #https://www.investopedia.com/markets/api/partial/historical/?Symbol=BILI&Type=%20Historical+Prices&Timeframe=Hourly&StartDate=Nov+28%2C+2010&EndDate=Dec+05%2C+2018
     url_prefix = "https://www.investopedia.com/markets/api/partial/historical/?"
     url_symbol = "Symbol="+symbol
     url_type = "&Type=%20Historical+Prices"
