@@ -37,4 +37,5 @@ def download_data(symbol, start_date=datetime.datetime(2018,1,1), end_date=datet
     dataframe = dataframe_list[0]
     dataframe.to_csv(file_path)
     
-download_data("AAPL",datetime.datetime(2018,8,1),datetime.date.today())
+if __name__ == "__main__":
+    download_data("AAPL",datetime.datetime(2018,8,1),datetime.date.today())
