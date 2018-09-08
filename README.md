@@ -11,10 +11,10 @@ download_data("AAPL",datetime.datetime(2018,8,1),datetime.date.today())
 
 ```py
 #get dataframe
-get_quotes("AAPL",datetime.datetime(2018,8,1),datetime.date.today())
+df = get_quotes("AAPL",datetime.datetime(2018,8,1),datetime.date.today())
 ```
 
 ```py
 #get dataframe for specific day
-get_quotes_from_date("AAPL",datetime.datetime(2018,8,1))
+df = get_quotes_from_date("AAPL",datetime.datetime(2018,8,1))
 ```
