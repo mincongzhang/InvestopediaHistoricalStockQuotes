@@ -2,6 +2,7 @@ import pandas as pd
 import os
 import datetime
 from six.moves import urllib
+import csv
 
 def is_non_zero_file(fpath):  
     return os.path.isfile(fpath) and os.path.getsize(fpath) > 0
